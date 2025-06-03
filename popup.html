@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 350px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            color: #25D366;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .instruction {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .instruction ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .instruction li {
+            margin: 5px 0;
+        }
+        #extractBtn {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        #extractBtn:hover {
+            background: #1da851;
+        }
+        #extractBtn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        #status {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        #downloadBtn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px;
+            display: none;
+        }
+        #downloadBtn:hover {
+            background: #0056b3;
+        }
+        .count {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #25D366;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>📱 WhatsApp Contact Extractor</h2>
+    
+    <div class="instruction">
+        <strong>ব্যবহারের নিয়ম:</strong>
+        <ol>
+            <li>WhatsApp Web এ যান এবং লগইন করুন</li>
+            <li>যে গ্রুপের contact extract করতে চান সেটি খুলুন</li>
+            <li>গ্রুপের নামের উপর ক্লিক করে group info খুলুন</li>
+            <li><strong>⚠️ গুরুত্বপূর্ণ:</strong> Member list এ ধীরে ধীরে scroll করুন যতক্ষণ না সব member load হয়</li>
+            <li>অথবা "Search members" এ click করে সব member দেখুন</li>
+            <li>নিচের "Extract Contacts" বাটনে ক্লিক করুন</li>
+        </ol>
+        <div style="background: #fff3cd; padding: 10px; border-radius: 5px; margin-top: 10px; border: 1px solid #ffeaa7;">
+            <strong>💡 Tips:</strong> 600 members এর জন্য scroll করতে কিছুটা সময় লাগবে। Extension automatic scroll করবে, কিন্তু manual scroll করলে আরো ভালো result পাবেন।
+        </div>
+    </div>
+
+    <button id="extractBtn">🔍 Extract Contacts</button>
+    
+    <div id="status" style="display: none;"></div>
+    
+    <div id="contactCount" class="count" style="display: none;"></div>
+    
+    <button id="downloadBtn">📥 Download CSV</button>
+
+    <script src="popup.js"></script>
+</body>
+</html>
